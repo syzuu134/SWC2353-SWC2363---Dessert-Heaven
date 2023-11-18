@@ -1,0 +1,116 @@
+
+/*  Body  */
+
+@keyframes fadeLeft {
+    0%{
+      opacity: 0;
+      transform: translateX(-5rem);
+    }
+  }
+  
+  @keyframes fadeup {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+  }
+  
+  .home {
+    padding-top: 10rem;
+    background: url(image/bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .home .slides-container .slidep {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    display: none;
+  }
+  
+  .home .slides-container .slidep .active{
+    display: flex;
+  }
+  
+  .home .slides-container .slidep .content{
+    flex: 1 1 40rem;
+    animation: fadeLeft 0.4s linear 0.4s backwards;
+  }
+  
+  .home .slides-container .slidep .content span{
+    color: #000;
+    font-size: 2.5rem;
+  }
+  
+  .home .slides-container .slidep .content h3{
+    font-size: 6rem;
+    color: #222;
+    padding: 5rem 0;
+  }
+  
+  .home .slides-container .slidep .img{
+    flex: 1 1 40rem;
+    margin: 3rem 0;
+  }
+  
+  .home .slides-container .slidep .img img{
+    width: 100%;
+    animation: fadeUp .4s linear;
+  }
+  
+  .home #next-slide,
+  .home #prev-slide{
+    position: absolute;
+    top:  50%;
+    transform: translateY(-50%);
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background: var(--brown);
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .home #next-slide:hover,
+  .home #prev-slide:hover{
+    background: #222;
+    color: #fff;
+  }
+  
+  .home #prev-slide{
+    left: 2rem;
+  }
+  
+  .home #next-slide{
+    right: 2rem;
+  }
+  
+  
+  @media(max-width: 450px) {
+    html {
+      font-size: 50%;
+    }
+    .home .slides-container .slide h3{
+      font-size: 4rem;
+    }
+    .home.slide h3{
+      font-size: 4rem;
+    }
+  }
+  @media (max-width : 991px) {
+    .home #next-slide, .home #prev-slide{
+      transform: translateY(0);
+      top: 88%;
+    }
+  
+    .home #prev-slide{
+      left: auto;
+      right: 8rem;
+    }
+  }
